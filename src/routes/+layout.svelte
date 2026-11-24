@@ -1,3 +1,4 @@
+<!-- This file defines the shared layout used by every page. -->
 <script lang="ts">
 	import favicon from '#lib/assets/favicon.svg';
 	import type { LayoutProps } from './$types';

@@ -1,56 +1,36 @@
-# sv
+# Campus Marketplace
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Campus Marketplace is a SvelteKit application using TypeScript and MongoDB.
 
-## Creating a project
+SvelteKit provides both the frontend and backend:
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Svelte components render the user interface.
+- SvelteKit server routes handle backend logic.
+- MongoDB stores application data.
+- TypeScript provides type safety.
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Requirements
 
-To recreate this project with the same configuration:
+- Node.js 20 or newer
+- npm
+- MongoDB running locally or a MongoDB Atlas database
 
-```sh
-# recreate this project
-npx sv@1.7.0 create --template minimal --types ts --install npm .
-```
+## Installation
 
-## Adding features
+Install dependencies:
 
-Add features to your project with `sv add`:
+npm install
 
-```sh
-npx sv add
-```
+## Frontend and backend organization
 
-For example, to add Tailwind CSS:
+SvelteKit contains both frontend and backend code in one project, but the code is separated by file conventions.
 
-```sh
-npx sv add tailwindcss
-```
+### Frontend pages
 
-## Developing
+Frontend pages use `+page.svelte`.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Example:
 
-```sh
-npm run dev
+```text
+src/routes/listings/+page.svelte
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

@@ -1,1 +1,1 @@
-// place files you want to import through the `#lib` alias in this folder.
+// This file exports shared library code that can be imported through the `#lib` alias.
