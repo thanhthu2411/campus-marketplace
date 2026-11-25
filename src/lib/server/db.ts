@@ -1,8 +1,10 @@
 // This file creates the MongoDB connection.
 import { MongoClient, ServerApiVersion } from "mongodb";
-import { MONGO_URI, MONGO_DATABASE } from "$app/env/private";
 
-const uri = MONGO_URI;
+const uri = process.env.MONGO_URI;
+const dbName = process.env.MONGO_DATABASE
+
+console.log(uri, dbName)
 
 if (!uri) {
   throw new Error("Please add MONGO_URI in .env");
@@ -19,6 +21,7 @@ const client = new MongoClient(uri, {
 let _db: MongoClient | null = null;
 
 const initDb = async () => {
+  
   if (_db) {
     console.log("Db is already initialized");
     return;
@@ -38,7 +41,7 @@ const getDb = () => {
     throw Error("Db not initialized");
   }
 
-  return _db.db(MONGO_DATABASE);
+  return _db.db(dbName);
 };
 
 const closeDb = async () => {
