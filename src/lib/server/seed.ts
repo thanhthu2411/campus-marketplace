@@ -35,17 +35,10 @@ const seedListings = async () => {
     const db = mongoDb.getDb()
 
     try {
-        const existListing = db.collection("listings")
-
-        try {
-            await existListing.drop()
-        } catch(error) {
-            console.error(error)
-        }
-
-        console.log("Collection 'listings' dropped successfully");
 
         const listings = await db.createCollection("listings")
+        await listings.deleteMany({});
+
         const listingResult = await listings.insertOne(sampleListing);
         console.log(listingResult.insertedId)
     } catch (error) {
