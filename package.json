@@ -10,6 +10,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"seed": "tsx src/lib/server/seed.ts",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -21,6 +22,7 @@
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"daisyui": "^5.8.2",
 		"svelte": "^5.57.3",
+		"tsx": "^4.23.15",
 		"svelte-check": "^4.7.8",
 		"typescript": "^6.0.3",
 		"vite": "^8.3.8"
